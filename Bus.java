@@ -1,11 +1,11 @@
 public class Bus {
 
   private String name;
-  private Person[] passenger;
+  private Person[] passengers;
 
   public Bus(String name) {
     this.name = name;
-    this.passenger = new Person[20];
+    this.passengers = new Person[20];
   }
 
   public String getName() {
@@ -15,7 +15,7 @@ public class Bus {
   public int passengerCount() {
     int numberOfPassangers = 0;
 
-    for (Person passenger : this.passenger) {
+    for (Person passenger : this.passengers) {
       if (passenger != null) {
         numberOfPassangers++;
       }
@@ -23,6 +23,20 @@ public class Bus {
 
     return numberOfPassangers;
   }
+
+  public boolean isBusFull() {
+    return passengerCount() == this.passengers.length;
+  }
+
+  public void addPassanger(Person passenger) {
+    if (isBusFull()) {
+      return;
+    }
+    int index = passengerCount();
+    this.passengers[index] = passenger;
+  }
+
+  
 
 
 }
