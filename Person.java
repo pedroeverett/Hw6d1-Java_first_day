@@ -1,3 +1,3 @@
-public class Passanger {
+public class Person {
 
 }
